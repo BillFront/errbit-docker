@@ -1,0 +1,13 @@
+---
+version: '2'
+services:
+  errbit:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    environment:
+      MONGODB_URL: mongodb://mongo/errbit
+  mongo:
+    image: mongo
